@@ -7,7 +7,7 @@
 
 ## 1. Introdução
 
-Vamos criar um jogo de RPG de Cartas, inspirado em Magic: The Gathering, focando nos princípios da Programação Orientada a Objetos (POO) para ensinar os conceitos fundamentais.
+Vamos criar um jogo de RPG de Cartas, inspirado em HearthStone, focando nos princípios da Programação Orientada a Objetos (POO) para ensinar os conceitos fundamentais.
 
 ## 2. Regras do Jogo
 
