@@ -3,8 +3,7 @@ public class Jogador
     public string Nome { get; }
     public int Energia { get; private set; }
     public int Vidas { get; private set; }
-
-    public List<Carta> Deck { get; set; } // finalizar na próxima aula.
+    public List<Carta> Deck { get; private set; } // 20 cartas, sendo 10 de ataque e 10 de defesa.
 
     public Jogador(string nome) {
         Nome = nome;
@@ -12,10 +11,6 @@ public class Jogador
         Vidas = 30;
     }
 
-    // exercícios:
-    // método que consuma a energia do jogador.
-    // polimorfismo CartaAtaque muda para a forma de Carta
-    // polimorfismo CartaDefesa muda para a forma de Carta
     public void ConsumirEnergia(Carta carta) {
         Energia = Math.Max(0, this.Energia - carta.Energia);
     }
@@ -36,5 +31,19 @@ public class Jogador
         Vidas = Math.Max(0, this.Vidas - carta.Dano);
 
         // Se Vidas == 0, o jogador perdeu. (condição de vitória).
+    }
+
+    public void IniciarDeck(List<Carta> cartas) {
+        Deck.AddRange(cartas);
+    }
+
+    public List<Carta> ObterDeck() {
+        return Deck;
+    }
+
+    public Carta SelecionarCarta(int indice) { 
+        Carta cartaSelecionada = Deck[indice];
+        Deck.RemoveAt(indice);
+        return cartaSelecionada;
     }
 }
