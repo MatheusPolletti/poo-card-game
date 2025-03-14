@@ -9,6 +9,7 @@ public class Jogador
         Nome = nome;
         Energia = 10;
         Vidas = 30;
+        Deck = new List<Carta>();
     }
 
     public void ConsumirEnergia(Carta carta) {
@@ -22,7 +23,7 @@ public class Jogador
 
     public void RestaurarVida(Carta carta) {
         // CartaDefesa cartaDefesa = (CartaDefesa)carta; // cast (coerção)
-        CartaDefesa cartaDefesa = carta as CartaDefesa; // cast seguro
+        CartaDefesa? cartaDefesa = carta as CartaDefesa; // cast seguro
 
         Vidas = Math.Min(30, this.Vidas + cartaDefesa.Vida);
     }
